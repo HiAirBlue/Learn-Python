@@ -1,2 +1,2 @@
 # Learn-Python
-学习python中的一些代码
+	在这里记录学习Python时的一些代码、心得。
