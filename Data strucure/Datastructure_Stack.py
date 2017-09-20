@@ -1,3 +1,5 @@
+
+
 class Stack:
 	def __init__(self):
 		self.items = []
@@ -30,19 +32,25 @@ def parChecker(symbolString):
 		if symbolString[i] in "([{)]}":
 			if symbolString[i] in "([{":
 				s.push(symbolString[i])
+				print('t1:',s.peek())
 			else:
-				if s.isEmpty:
+				if s.isEmpty():
 					balance = False
+					print('t2:',balance,s.isEmpty())
 					break
 				else:
 					opens = "([{"
 					closes = ")]}"
 					top = s.pop()
-					if not (opens.index[top] == closes.index[symbolString[i]]):
+					print(top)
+					if not opens.index(top) == closes.index(symbolString[i]):
 						balance = False
+						print('t3',balance)
 						break
 		i += 1
-	if balance and s.isEmpty:
+		print("i=",i)
+	if balance and s.isEmpty():
 		return True
 	else:
 		return False
+
