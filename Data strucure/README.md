@@ -1,9 +1,10 @@
 # 数据结构
 
 ## 1. 目录
-### 1.1栈——Datastructure_Stack.py
+### 1.1 栈——Datastructure_Stack.py
 1. 描述栈类 Stack()
-2. 利用栈实现括号匹配 parChecker(symbolString)s
+2. 利用栈实现括号匹配 parChecker(symbolString)
+3. 十进制到N进制转换 baseConverter(decNum, base)
 
 
 ## 2. 参考
