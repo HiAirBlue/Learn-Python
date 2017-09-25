@@ -5,6 +5,7 @@
 1. 描述栈类 Stack()
 2. 利用栈实现括号匹配 parChecker(symbolString)
 3. 十进制到N进制转换 baseConverter(decNum, base)
+4. 中缀转后缀 infixToPostfix(infixexpr)
 
 
 ## 2. 参考
