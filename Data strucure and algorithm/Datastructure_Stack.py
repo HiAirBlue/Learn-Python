@@ -84,25 +84,29 @@ def infixToPostfix(infixexpr):
 	opStack = Stack()
 	postfixlist = []
 	tokenlist = infixexpr.split()
+	#print("t3:",tokenlist)
 
 	for token in tokenlist:
+		#print('t4:',token)
 		if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
 			postfixlist.append(token)
+			#print('t1:',postfixlist)
 		elif token == "(":
 			opStack.push(token)
 		elif token == ")":
 			topToken = opStack.pop()
 			while topToken != "(":
 				postfixlist.append(topToken)
-				topToken.pop()
+				topToken = opStack.pop()
 		else:
 			while (not opStack.isEmpty()) and (prec[opStack.peek()] >= prec[token]):
 				postfixlist.append(opStack.pop())
 			opStack.push(token)
+			#print('t2',opStack.peek())
 
-		while not opStack.isEmpty():
-			postfixlist.append(opStack.pop())
+	while not opStack.isEmpty():
+		postfixlist.append(opStack.pop())
 		
-		return " ".join(postfixlist)
+	return " ".join(postfixlist)
 				
 
