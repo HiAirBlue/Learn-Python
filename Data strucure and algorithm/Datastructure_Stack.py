@@ -1,4 +1,10 @@
+"""栈描述及相关应用
 
+	parChecker(symbolString) 括号匹配
+	baseConverter(decNum, base) 十进制到N进制转换
+	infixToPostfix(infixexpr)  中缀表达式转为后缀表达式
+	postfixEval(postfixExpr)  后缀表达式求值
+	"""
 
 class Stack:
 	def __init__(self):
@@ -74,11 +80,11 @@ def baseConverter(decNum, base):
 	
 	return newNum
 
-
+# 算法三  中缀表达式转为后缀表达式
 def infixToPostfix(infixexpr):
-	"""将中序表达式转换为后序表达式。
+	"""将中缀表达式转换为后缀表达式。
 
-	输入的中序表达式每个字符间要以空格分开。"""
+	输入的中缀表达式每个字符间要以空格分开。"""
 
 	prec = {"*": 3, "/": 3, "+": 2, "-": 2, "(": 1}  #用字典保存符号的优先级
 	opStack = Stack()
@@ -108,5 +114,36 @@ def infixToPostfix(infixexpr):
 		postfixlist.append(opStack.pop())
 		
 	return " ".join(postfixlist)
-				
+	
+#算法四  求后缀表达式的值
+def postfixEval(postfixExpr):
+	"""求后缀表达式的值
+
+	输入的后缀表达式字符间必须带有空格"""
+	operandStock = Stack()
+	tokenlist = postfixExpr.split()
+
+	for token in tokenlist:
+		try:
+			num = int(token)
+			operandStock.push(num)
+		except ValueError:
+			if token in "+-*/":
+				operand2 = operandStock.pop()
+				operand1 = operandStock.pop()
+
+				if token == "+":
+					result = operand1 + operand2
+				elif token == "-":
+					result = operand1 - operand2
+				elif token == "*":
+					result = operand1 * operand2
+				elif token == "/":
+					result = operand1 / operand2
+
+				operandStock.push(result)
+
+	return operandStock.pop()			
+
+
 
