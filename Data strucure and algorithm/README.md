@@ -14,7 +14,17 @@
 3. 烫手山芋算法  hotpotato(namelist,num)
 4. 回文判断 palCheck(aString)
 
+### 1.3 递归 
+
+	递归算法遵守的三个重要定律：
+    1. 具有基本情况
+    2. 改变算法的状态向基本情况靠近
+    3. 以递归的方式调用自身
+    
+
+
 
 ## 2. 参考
 
 1. [一篇文章让你彻底搞清楚Python中self的含义](http://www.cnblogs.com/jessonluo/p/4717140.html)
+2. [递归算法详解](http://chenqx.github.io/2014/09/29/Algorithm-Recursive-Programming/)
